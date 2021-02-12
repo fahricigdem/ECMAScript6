@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+
+        arr=[4,2,6,3, "ali"]
+        console.log(arr)            // (5) [4, 2, 6, 3, "ali"]
+        console.log(4,2,6,3,"ali")  //4 2 6 3 "ali"
+        console.log(...arr)         //4 2 6 3 "ali"
+        console.log(arr[0],arr[4])  // 4 "ali"
+
+        
+        add = (a,b,c) => a+b+c
+        nums=[2,3,4]
+        console.log(add(nums[0],nums[1],nums[2]))  //9
+        console.log(add(...nums))   //9
+
+        essen=["brot","obst","nachtisch"]
+        brot=["weisbrot","swarzbrot"]
+        obst=["apfel","orange","kiwi"]
+        nachtisch=["vanilla","pudding"]
+        essen=["brot",...brot,"obst",...obst,"nachtisch",...nachtisch]
+        console.log(essen) // (10) ["brot", "weisbrot", "swarzbrot", "obst", "apfel", "orange", "kiwi", "nachtisch", "vanilla", "pudding"]
+        console.log(...essen)  //brot weisbrot swarzbrot obst apfel orange kiwi nachtisch vanilla pudding
+
+        
+        meal2=[...essen]  //array cloning
+        meal2[0]="bread"
+        console.log(meal2[0],essen[0]) //bread brot
+
+        meal1=essen      //reference variable
+        meal1[0]="bread"
+        console.log(meal1[0],essen[0]) //bread bread
+
+
+        meal2=[...essen, "wasser"]
+        console.log(meal2[meal2.length-1])  // wasser
+        
+        meal2=["händeWaschen",...essen]
+        console.log(meal2[0])               //  händeWaschen
+        
+
+
+
+       
+
+
+
+
+       
+
+    </script>
+</body>
+</html>
