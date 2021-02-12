@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+class Person{
+    constructor(name,age){
+        this.n=name;
+        this.a=age;
+    }
+
+    displayName(){
+        console.log(this.n)
+    }
+}
+
+class Erwachsen extends Person{
+    constructer (job){         //without super() also works
+        this.j=job
+    }
+
+    displayGehalt(){
+        console.log(this.a*2)
+    }
+}
+
+onur= new Person("CigdemJunior", 6)
+onur.displayName() // CigdemJunior
+console.log(onur.a) //6
+
+fahri = new Erwachsen("Cigdem",36)
+fahri.displayName() // Cigdem
+console.log(fahri.j) // undefined
+fahri.j="IT Expert"
+console.log(fahri.j) //IT Expert
+console.log(fahri)//Erwachsen {n: "Cigdem", a: 36, j: "IT Expert"}
+fahri.displayGehalt()//72
+
+
+
+
+
+
+
+       
+
+    </script>
+</body>
+</html>
