@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+    function* eineGenerator(){
+    yield "brot"
+    yield "meat"
+    yield "reis"
+    console.log("iyi yedik tatli yok mu?")
+    yield "wasser"
+}
+
+let ooha = eineGenerator()
+console.log(ooha.next())   //{value: "brot", done: false}
+console.log(ooha.next().value)      // meat
+console.log(ooha.next().value)      // reis
+console.log(ooha.next().value)      // iyi yedik tatli yok mu?
+                                    // wasser    
+console.log(ooha.next().value)      //undefined
+
+
+////////////////////////////////////////////////////////////////
+console.log(`zweite Funktion        :
+    `)
+
+function* andereGenerator(){
+    let a=2
+    let b=3
+    yield a+b +"->a+b"
+    yield a-b + "->a-b"
+    yield a*b + "->a*b"
+    yield a/b + "->a/b"
+    while (b<6){
+        yield b++ +"->b"
+    }
+    while ((b-a)<6){
+        yield (b-a)+"->b-a<6", b++
+    }
+}
+
+let oDaNe = andereGenerator()
+console.log(oDaNe.next())        //{value: 5, done: false}
+console.log(oDaNe.next().value)  // -1
+console.log(oDaNe.next().value)  //6
+console.log(oDaNe.next().value)  // 0.6666666666666666
+console.log(oDaNe.next().value)  //3
+console.log(oDaNe.next().value)  //4
+console.log(oDaNe.next().value)  //5
+console.log(oDaNe.next().value)  //4
+console.log(oDaNe.next().value)  //5
+console.log(oDaNe.next().value)  //undefined
+
+
+    </script>
+</body>
+</html>
+
