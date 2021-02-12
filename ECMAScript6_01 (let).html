@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    	var a=5
+        var a=4
+        console.log("before function:",a)
+
+
+        function test1() {
+        	var a=3	
+        	console.log("inside func:",a)
+
+        	if(1){
+        		var a = 2
+        		console.log("in function if:",a)
+        	}
+
+        	console.log("inside func after if:",a, "outside if same")
+        }
+
+       	test1()
+		
+		console.log("outside func:",a)
+
+/////////////////////////////////////////////////////////////////////////7
+		let b=15
+		//let b=14  // it cannot be declared again 
+        console.log("before function:",b)
+
+
+        function test2() {
+        	let b=13	
+        	console.log("inside func:",b)
+
+        	if(1){
+        		let b = 12
+        		console.log("in function if:",b)
+        	}
+
+        	console.log("inside func after if:",b, "outside if wieder 13")
+        }
+
+       	test2()
+		
+		console.log("outside func:",b)
+
+    </script>
+</body>
+</html>
